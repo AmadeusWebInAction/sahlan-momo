@@ -1,0 +1,15 @@
+#key	value
+name	Cave 3.0
+byline	A Multidisciplinary Opera
+safeName	spanda-cave3
+footer-message	[EDIT: ./data/site.tsv]
+siteMenuName	About Us
+scaffold	search, sitemap
+sections_no	home
+|locals
+local-url	http://localhost/networks/sahlan-momo/live/cave3/
+local-preview-url	http://localhost/networks/sahlan-momo/cave3/
+|lives
+live-url	https://sahlan-momo.amadeusweb.site/cave3/
+live-preview-url	https://preview-sahlan-momo.amadeusweb.site/cave3/
+year	2017
