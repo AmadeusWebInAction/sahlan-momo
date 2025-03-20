@@ -37,7 +37,6 @@ if (!$pv) {
 		],
 	]);
 }
-parameterError('SEARCH', $temp);
 
 addStyle('network', 'network-static--common-assets');
 addStyle(SITENAME, 'network-static--common-assets');
@@ -61,8 +60,5 @@ function enrichThemeVars($vars, $what) {
 variables([
 	'social' => [
 		[ 'type' => 'linkedin', 'url' => 'https://www.linkedin.com/in/imran-ali-namazi/', 'name' => 'Founder Imran' ],
-	],
-	'searches' => [
-		'amadeusweb' => ['code' => 'c0a96edc60a44407a"', 'name' => 'AmadeusWeb Network', 'description' => 'All AmadeusWeb sites (world, web, imran and core)'],
 	],
 ]);
