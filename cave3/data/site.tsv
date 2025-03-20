@@ -5,7 +5,7 @@ safeName	spanda-cave3
 footer-message	[EDIT: ./data/site.tsv]
 siteMenuName	About Us
 scaffold	search, sitemap
-sections_no	home
+sections	project, educational-and-media, notebook: notebook+setdesign, digitaloperahouse, newsroom
 |locals
 local-url	http://localhost/networks/sahlan-momo/live/cave3/
 local-preview-url	http://localhost/networks/sahlan-momo/cave3/

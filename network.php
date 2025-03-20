@@ -13,7 +13,31 @@ variables([
 	'network-static' => $static = $staticUrls[variable(SITEURLKEY)],
 	'site-static-folder' => NETWORKPATH . '/' . SITENAME . '/',
 	'site-static' => $static . SITENAME . '/',
+	'assets-override' => 'https://cave3.org/wp-content', //until ftp access to smf / we decide if its 4 different statics or what
+
+	//
+	'sections-have-files' => true,
+	'no-page-menu' => true, //doesnt as yet support sections with files
 ]);
+
+if ($pv = variable('preview')) {
+	variables($d = [
+		'default-search' => $mn = 'sahlanallpreviews',
+		'searches' => [
+			$mn => ['code' => '803ec2335211b42d3', 'name' => 'All 4 sites of Sahlan Momo', 'description' => '[description to follow]'],
+		],
+	]);
+}
+if (!$pv) {
+	$temp = main::defaultSearches();
+	variables($d = [
+		'default-search' => $ds = 'imranali',
+		'searches' => [
+			$ds => $temp[$ds],
+		],
+	]);
+}
+parameterError('SEARCH', $temp);
 
 addStyle('network', 'network-static--common-assets');
 addStyle(SITENAME, 'network-static--common-assets');
@@ -23,8 +47,12 @@ if (SITENAME == 'cave3') {
 }
 
 function enrichThemeVars($vars, $what) {
-	if (SITENAME == 'cave3' && variable('footer-widgets-in-enrich')) {
-		$vars['footer-widgets'] = getSnippet('footer-links');
+	if (variable('footer-widgets-in-enrich')) {
+		$html = getSnippet('footer-links');
+		$html = replaceItems($html, [
+			
+		]);
+		$vars['footer-widgets'] = $html;
 	}
 
 	return $vars;
